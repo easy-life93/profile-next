@@ -67,7 +67,7 @@ In order to run this project you need:
 
 
 ## 👥 Authors <a name="authors"></a>
-👤 **MARVIN OTIENO**
+👤 **Stephen Gusse**
 
 - GitHub: [@githubhandle](https://github.com/easy-life93/)
 
