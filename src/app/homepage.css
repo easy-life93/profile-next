@@ -1,0 +1,65 @@
+body {
+  background-color: #0d1f30;
+}
+
+.Img-container {
+  background-image: url('../../public/images/coding.gif');
+  box-shadow: 0 0 30px #4ade80;
+  animation: shadowAnimation 10s ease-in-out infinite; /* Animation applied here */
+}
+
+.home-pageimg {
+  opacity: 0.8;
+  border-radius: 5px;
+}
+
+.start-collab-btn {
+  background: rgb(53, 130, 230);
+  /* box-shadow: 0 0 5px greenyellow; */
+}
+
+.start-collab-btn:hover {
+  box-shadow: 0 0 7px rgb(77, 118, 170);
+}
+
+.home-sci a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  background: transparent;
+  border: 2px solid rgb(77, 152, 77);
+  border-radius: 50%;
+  color: rgb(19, 180, 19);
+  text-decoration: none;
+  margin-right: 20px;
+}
+
+.home-sci a:hover {
+  box-shadow: 0 0 20px greenyellow;
+  background: linear-gradient(45deg, #54a625, #003153);
+  color: white;
+}
+
+.email-sbt-btn {
+  background: linear-gradient(45deg, #256aa6, #005337);
+  box-shadow: 0 0 10px cyan;
+}
+
+.email-sbt-btn:hover {
+  box-shadow: 0 0 15px rgb(47, 137, 255);
+}
+
+/* Keyframes for box-shadow animation */
+@keyframes shadowAnimation {
+  0% {
+    box-shadow: 0 0 20px #4ade80;
+  }
+  50% {
+    box-shadow: 0 0 20px #2563eb ;
+  }
+  100% {
+    box-shadow: 0 0 20px #4ade80;
+  }
+}

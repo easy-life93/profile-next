@@ -1,0 +1,54 @@
+.logos {
+  display: flex;
+  justify-content: space-between;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: rgb(19, 58, 58);
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgb(77, 152, 77);
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes frontend-slide {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(200%);
+  }
+}
+
+.logos-slide {
+  display: inline-flex;
+  justify-content: space-between;
+  animation: slide 20s linear infinite;
+}
+
+.logos-slide span {
+  width: 100px;
+  margin: 0 4rem;
+}
+
+.resume-btn {
+  background-color: transparent;
+  border: 2px solid rgb(77, 152, 77);
+  box-shadow: 0 0 10px greenyellow;
+}
+
+.resume-btn:hover {
+  background: rgb(77, 152, 77);
+}
+
+.down-ico {
+  background-blend-mode: overlay;
+}
