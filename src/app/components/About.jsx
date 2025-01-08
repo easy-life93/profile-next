@@ -3,13 +3,194 @@ import { SiRubyonrails, SiMongodb } from "react-icons/si";
 import Image from "next/image";
 import Modal from "./Modal";
 import "../about.css";
+const SkillItem = ({ src, alt, name, color }) => (
+  <span className="slide flex flex-col items-center">
+    {src.length ? (
+      <Image src={src} alt={alt} width={75} height={75} />
+    ) : (
+      src
+  )}
+    <p className={`hidden md:block text-xl text-center font-semibold mt-2 ${color}`}>
+      {name}
+    </p>
+  </span>
+);
+const languages = [
+  {
+    src: "/images/icons/javascript.png",
+    alt: "javascript-ico",
+    label: "JavaScript",
+    labelColor: "text-yellow-500",
+  },
+  {
+    src: "/images/icons/ruby.png",
+    alt: "ruby-ico",
+    label: "Ruby",
+    labelColor: "text-red-600",
+  },
+  {
+    src: "/images/icons/python.png",
+    alt: "python-ico",
+    label: "Python",
+    labelColor: "text-sky-500",
+  },
+  {
+    src: "/images/icons/r-project.png",
+    alt: "R-ico",
+    label: "R",
+    labelColor: "text-sky-300",
+  },
+  {
+    src: "/images/icons/sql.png",
+    alt: "sql-ico",
+    label: "SQL",
+    labelColor: "text-orange-500",
+  },
+  {
+    src: "/images/icons/bash.png",
+    alt: "bash-ico",
+    label: "Bash Script",
+    labelColor: "text-green-600",
+  },
+];
+
+const frontend = [
+  {
+    src: "/images/icons/html5.png",
+    alt: "html5-ico",
+    label: "HTML5",
+    labelColor: "text-orange-500",
+  },
+  {
+    src: "/images/icons/css3.png",
+    alt: "css3-ico",
+    label: "CSS3",
+    labelColor: "text-sky-400",
+  },
+  {
+    src: "/images/icons/bootstrap.png",
+    alt: "bootstrap-ico",
+    label: "Bootstrap",
+    labelColor: "text-fuchsia-600",
+  },
+  {
+    src: "/images/icons/tailwind-css.png",
+    alt: "tailwind-css-ico",
+    label: "Tailwindcss",
+    labelColor: "text-cyan-400",
+  },
+  {
+    src: "/images/icons/react.png",
+    alt: "react-ico",
+    label: "React.js",
+    labelColor: "text-sky-500",
+  },
+  {
+    src: "/images/icons/nextjs.png",
+    alt: "nextjs-ico",
+    label: "NEXT.js",
+    labelColor: "text-cyan-50",
+  },
+];
+
+const backend = [
+  {
+    src: <SiRubyonrails size={75} color="red" />,
+    alt: "rails-ico",
+    label: "Rails",
+    labelColor: "text-rose-700",
+  },
+  {
+    src: "/images/icons/node.png",
+    alt: "node-ico",
+    label: "Node.js",
+    labelColor: "text-green-400",
+  },
+  {
+    src: "/images/icons/postgresql.png",
+    alt: "postgresql-ico",
+    label: "PostgreSQL",
+    labelColor: "text-sky-500",
+  },
+  {
+    src: <SiMongodb size={75} color="green" />,
+    alt: "mongodb-ico",
+    label: "MongoDB",
+    labelColor: "text-emerald-700",
+  },
+  {
+    src: "/images/icons/django.png",
+    alt: "django-ico",
+    label: "django",
+    labelColor: "text-lime-200",
+  },
+  {
+    src: "/images/icons/express.png",
+    alt: "express-ico",
+    label: " Express.js",
+    labelColor: "text-cyan-100",
+  },
+];
+
+const tools = [
+  {
+    src: "/images/icons/git.png",
+    alt: "git-ico",
+    label: "Git",
+    labelColor: "text-orange-500",
+  },
+  {
+    src: "/images/icons/github.png",
+    alt: "github-ico",
+    label: "GitHub",
+    labelColor: "text-black",
+  },
+  {
+    src: "/images/icons/vscode.png",
+    alt: "vscode-ico",
+    label: "Visual Studio",
+    labelColor: "text-pink-500",
+  },
+  {
+    src: "/images/icons/docker.png",
+    alt: "docker-ico",
+    label: "Docker",
+    labelColor: "text-yellow-500",
+  },
+  
+  {
+    src: "/images/icons/slack.png",
+    alt: "slack-ico",
+    label: "Slack",
+    labelColor: "text-rose-400",
+  },
+  {
+    src: "/images/icons/linux.png",
+    alt: "linux-ico",
+    label: "Linux",
+    labelColor: "text-yellow-300",
+  },
+];
+const renderSkills = (logos) => {
+  return logos.map((logo, index) => (
+    <SkillItem
+      key={index}
+      src={logo.src}
+      alt={logo.alt}
+      width={75}
+      height={75}
+      name={logo.label}
+      color={logo.labelColor}
+    />
+  ));
+};
 
 const About = () => {
   return (
     <section className="my-14" id="about">
       <div className=" py-5">
         <h2 className="text-center font-mono italic text-4xl py-3 sm:text-6xl font-bold mt-10 text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
-        Code is the Future We Make
+          Code is the Future We Make
         </h2>
         <div className="about-bio h-96 md:h-auto overflow-scroll">
           <p className="text-[#ADB7BE] w-full text-lg sm:text-xl text-center my-10">
@@ -54,7 +235,6 @@ const About = () => {
               />
             </a>
           </button>
-
         </div>
         <h3 className="text-center mx-[5%] my-10 text-2xl sm:text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
           My Skills
@@ -64,546 +244,32 @@ const About = () => {
             Language
           </h3>
           <div className="w-[100%] logos h-15 sm:h-30">
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/javascript.png"
-                  alt="javascript-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-yellow-500">
-                  JavaScript
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/ruby.png"
-                  alt="ruby-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-red-600">
-                  Ruby
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/python.png"
-                  alt="python-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  Python
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/r-project.png"
-                  alt="R-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-300">
-                  R
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/sql.png"
-                  alt="sql-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-orange-500">
-                  SQL
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/bash.png"
-                  alt="bash-ico"
-                  width={80}
-                  height={80}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-green-600">
-                  Bash Script
-                </p>
-              </span>
-            </div>
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/javascript.png"
-                  alt="javascript-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-yellow-500">
-                  JavaScript
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/ruby.png"
-                  alt="ruby-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-red-600">
-                  Ruby
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/python.png"
-                  alt="python-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  Python
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/r-project.png"
-                  alt="R-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-300">
-                  R
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/sql.png"
-                  alt="sql-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-orange-500">
-                  SQL
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/bash.png"
-                  alt="bash-ico"
-                  width={80}
-                  height={80}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-green-600">
-                  Bash Script
-                </p>
-              </span>
-            </div>
+            <div className="logos-slide sm:my-5">{renderSkills(languages)}</div>
+            <div className="logos-slide sm:my-5">{renderSkills(languages)}</div>
           </div>
+
           <h3 className="self-end text-xl sm:text-4xl font-bold mt-10 mb-5 text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-blue-300">
             Frontend
           </h3>
           <div className="w-[100%] logos h-15 sm:h-30">
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/html5.png"
-                  alt="bash-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-orange-500">
-                  HTML5
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/css3.png"
-                  alt="css3-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-400">
-                  CSS3
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/bootstrap.png"
-                  alt="bootstrap-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-fuchsia-600">
-                  Bootstrap
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/tailwind-css.png"
-                  alt="tailwind-css-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-cyan-400">
-                  Tailwindcss
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/react.png"
-                  alt="react-ico"
-                  width={80}
-                  height={80}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  React.js
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/nextjs.png"
-                  alt="nextjs-ico"
-                  width={80}
-                  height={80}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-cyan-50">
-                  NEXT.js
-                </p>
-              </span>
-            </div>
-
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/html5.png"
-                  alt="bash-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-orange-500">
-                  HTML5
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/css3.png"
-                  alt="css3-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-400">
-                  CSS3
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/bootstrap.png"
-                  alt="bootstrap-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-fuchsia-600">
-                  Bootstrap
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/tailwind-css.png"
-                  alt="tailwind-css-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-cyan-400">
-                  Tailwindcss
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/react.png"
-                  alt="react-ico"
-                  width={80}
-                  height={80}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  React.js
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/nextjs.png"
-                  alt="nextjs-ico"
-                  width={80}
-                  height={80}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-cyan-50">
-                  NEXT.js
-                </p>
-              </span>
-            </div>
+            <div className="logos-slide sm:my-5">{renderSkills(frontend)}</div>
+            <div className="logos-slide sm:my-5">{renderSkills(frontend)}</div>
           </div>
+
           <h3 className="self-start text-xl sm:text-4xl font-bold mt-10 mb-5 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">
             Backend
           </h3>
           <div className="w-[100%] logos h-15 sm:h-30 sm:my-2">
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <SiRubyonrails size={75} color="red" />
-                <p className="hidden md:block text-xl text-center font-semibold text-rose-700">
-                  Rails
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/node.png"
-                  alt="node-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-green-400">
-                  Node.js
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/postgresql.png"
-                  alt="postgresql-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  PostgreSQL
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <SiMongodb size={75} color="green" />
-                <p className="hidden md:block text-xl text-center font-semibold text-emerald-700">
-                  MongoDB
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/django.png"
-                  alt="django-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-lime-200">
-                  django
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/express.png"
-                  alt="express-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-cyan-100">
-                  Express.js
-                </p>
-              </span>
-            </div>
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <SiRubyonrails size={75} color="red" />
-                <p className="hidden md:block text-xl text-center font-semibold text-rose-700">
-                  Rails
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/node.png"
-                  alt="node-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-green-400">
-                  Node.js
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/postgresql.png"
-                  alt="postgresql-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  PostgreSQL
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <SiMongodb size={75} color="green" />
-                <p className="hidden md:block text-xl text-center font-semibold text-emerald-700">
-                  MongoDB
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/django.png"
-                  alt="django-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-lime-200">
-                  django
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/express.png"
-                  alt="express-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-cyan-100">
-                  Express.js
-                </p>
-              </span>
-            </div>
+            <div className="logos-slide sm:my-5">{renderSkills(backend)}</div>
+            <div className="logos-slide sm:my-5">{renderSkills(backend)}</div>
           </div>
-          <h3 className="self-end text-xl sm:text-4xl font-bold mt-10 mb-5 text-transparent bg-clip-text bg-gradient-to-r from-violet-600 to-rose-300">
+
+          <h3 className="self-end text-xl sm:text-4xl font-bold mt-10 mb-5 text-transparent bg-clip-text bg-gradient-to-r from-purple-400 to-pink-500">
             Tools
           </h3>
-          <div className="w-[100%] logos h-15 sm:h-30 sm:my-2">
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/git.png"
-                  alt="git-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-red-400">
-                  Git
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/github.png"
-                  alt="github-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-black">
-                  GitHub
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/vscode.png"
-                  alt="vscode-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-pink-500">
-                  Visual Studio
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/docker.png"
-                  alt="docker-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  Docker
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/slack.png"
-                  alt="slack-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-rose-400">
-                  Slack
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/linux.png"
-                  alt="linux-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-yellow-300">
-                  Linux
-                </p>
-              </span>
-            </div>
-            <div className="logos-slide sm:my-5">
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/git.png"
-                  alt="git-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-red-400">
-                  Git
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/github.png"
-                  alt="github-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-black">
-                  GitHub
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/vscode.png"
-                  alt="vscode-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-pink-500">
-                  Visual Studio
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/docker.png"
-                  alt="docker-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-sky-500">
-                  Docker
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/slack.png"
-                  alt="slack-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-rose-400">
-                  Slack
-                </p>
-              </span>
-              <span className="slide flex flex-col items-center">
-                <Image
-                  src="/images/icons/linux.png"
-                  alt="linux-ico"
-                  width={75}
-                  height={75}
-                />
-                <p className="hidden md:block text-xl text-center font-semibold text-yellow-300">
-                  Linux
-                </p>
-              </span>
-            </div>
+          <div className="w-[100%] logos h-15 sm:h-30">
+            <div className="logos-slide sm:my-5">{renderSkills(tools)}</div>
+            <div className="logos-slide sm:my-5">{renderSkills(tools)}</div>
           </div>
         </div>
       </div>
