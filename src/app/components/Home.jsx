@@ -41,7 +41,7 @@ const HomeSection = () => {
           </p>
           <div className="mt-5 flex justify-between">
             <div className="home-sci mt-2 mb-2 ml-5 flex justify-between sm:justify-start sm:ml-0">
-                        <a target="_blank" href="gusse2593@gmail.com"><FaGoogle size={17} /></a>
+                        <a target="_blank" href="mailto:gusse2593@gmail.com"><FaGoogle size={17} /></a>
               
               <a target="_blank" href="https://github.com/easy-life93/">
                 <FaSquareGithub size={17} />
