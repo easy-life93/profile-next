@@ -16,7 +16,7 @@ const HomeSection = () => {
       <div className="flex flex-col sm:flex-row justify-center">
         <div className="md:mr-6 place-self-center mt-6 text-center sm:text-left">
           <h1 className="mb-2 text-3xl sm:text-5xl py-2 lg:text-6xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-600">
-            Hi, I&apos;m Stephen Gusse
+            Hi, I&apos;m Easy Life
           </h1>
           <h2 className="text-white mb-4 text-4xl sm:text-5xl lg:text-6xl font-extrabold">
             <TypeAnimation
