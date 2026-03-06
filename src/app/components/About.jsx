@@ -194,7 +194,7 @@ const About = () => {
         </h2>
         <div className="about-bio h-96 md:h-auto overflow-scroll">
           <p className="text-[#ADB7BE] w-full text-lg sm:text-xl text-center my-10">
-            Hello, am Gusse93, a results-oriented Software developer known for
+            Hello, am Easy Life, a results-oriented Software developer known for
             my disciplined approach and unwavering focus on delivering
             exceptional user experiences. Highly skilled and results-driven
             senior full-stack engineer with a roven track record of delivering
